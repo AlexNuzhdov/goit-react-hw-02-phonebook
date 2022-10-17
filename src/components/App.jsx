@@ -21,7 +21,7 @@ export class App extends React.Component {
     data.id = nanoid();
     const contacts = this.state.contacts;
 
-    const findName = contacts.find(contact => contact.name === data.name);
+    const findName = contacts.find(contact => contact.name.toLowerCase() === data.name.toLowerCase());
     if (findName) {
       return alert(`${data.name} is already in contacts.`);
     }

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Form, Label } from 'components/ContactForm/ContactForm.styled';
 
 export class ContactForm extends React.Component {
@@ -20,6 +21,11 @@ export class ContactForm extends React.Component {
         this.props.onSubmit(this.state);
         this.reset();
     };
+
+    static propTypes = {
+        onSubmit: PropTypes.func.isRequired,
+    };
+
     reset = () => {
       this.setState({ name: '',  number: ''});
     };
